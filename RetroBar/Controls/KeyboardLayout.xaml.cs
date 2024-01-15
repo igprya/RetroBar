@@ -10,7 +10,7 @@ using System.Windows.Threading;
 using RetroBar.Utilities;
 namespace RetroBar.Controls
 {
-    public partial class Locale : UserControl
+    public partial class KeyboardLayout : UserControl
     {
         #region DllImports
         [DllImport("user32.dll")] 
@@ -23,7 +23,7 @@ namespace RetroBar.Controls
         private static extern IntPtr GetKeyboardLayout(uint thread);
         #endregion
         
-        public static DependencyProperty LocaleProperty = DependencyProperty.Register("LocaleIdentifier", typeof(CultureInfo), typeof(Locale));
+        public static DependencyProperty LocaleProperty = DependencyProperty.Register("LocaleIdentifier", typeof(CultureInfo), typeof(KeyboardLayout));
 
         private readonly DispatcherTimer clock = new DispatcherTimer(DispatcherPriority.Background);
         
@@ -35,7 +35,7 @@ namespace RetroBar.Controls
 
         private bool _isLoaded;
         
-        public Locale()
+        public KeyboardLayout()
         {
             InitializeComponent();
             DataContext = this;
